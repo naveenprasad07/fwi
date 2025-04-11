@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FWI Prediction</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f2f2f2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .login {
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+        width: 300px;
+      }
+      input {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        box-sizing: border-box;
+      }
+      button {
+        width: 100%;
+        padding: 10px;
+        background: #3498db;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+      h1,
+      h2 {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login">
+      <h1>FWI Prediction</h1>
+      <form action="{{ url_for('predict_datapoint') }}" method="post">
+        <input
+          type="text"
+          name="Temperature"
+          placeholder="Temperature"
+          required
+        />
+        <input
+          type="text"
+          name="RH"
+          placeholder="Relative Humidity (RH)"
+          required
+        />
+        <input type="text" name="Ws" placeholder="Wind Speed (Ws)" required />
+        <input type="text" name="Rain" placeholder="Rain" required />
+        <input type="text" name="FFMC" placeholder="FFMC" required />
+        <input type="text" name="DMC" placeholder="DMC" required />
+        <input type="text" name="ISI" placeholder="ISI" required />
+        <input type="text" name="Classes" placeholder="Classes" required />
+        <input type="text" name="Region" placeholder="Region" required />
+        <button type="submit">Predict</button>
+      </form>
+      {% if results %}
+      <h2>The FWI prediction is: {{ results }}</h2>
+      {% endif %}
+    </div>
+  </body>
+</html>

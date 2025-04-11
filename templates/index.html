@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forest Fire Prediction</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .container {
+        max-width: 900px;
+        background-color: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+      h1,
+      h2 {
+        text-align: center;
+        color: #2c3e50;
+      }
+      p {
+        font-size: 18px;
+        line-height: 1.6;
+        color: #333;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      th,
+      td {
+        padding: 10px;
+        border: 1px solid #ccc;
+        text-align: center;
+      }
+      th {
+        background-color: #3498db;
+        color: white;
+      }
+      tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+      .btn {
+        display: inline-block;
+        margin-top: 30px;
+        padding: 12px 24px;
+        background-color: #3498db;
+        color: white;
+        text-decoration: none;
+        border-radius: 6px;
+        font-size: 16px;
+        text-align: center;
+      }
+      .btn:hover {
+        background-color: #2980b9;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Forest Fire Weather Index (FWI) Prediction</h1>
+
+      <p>
+        This web application uses a machine learning model to predict the
+        <strong>Forest Fire Weather Index (FWI)</strong>
+        based on weather-related features like temperature, humidity, wind
+        speed, rainfall, and more. It helps in assessing fire risk levels in
+        forested areas.
+      </p>
+
+      <p>
+        The model is trained on real-world weather and fire data, and it
+        predicts the FWI based on the input values you provide. This is useful
+        for early warnings and forest fire prevention strategies.
+      </p>
+
+      <h2>🌡️ What is FWI?</h2>
+      <p>
+        The Forest Fire Weather Index (FWI) is a numeric scale that indicates
+        the potential risk and intensity of a wildfire based on current weather
+        conditions. Higher values mean a greater chance and severity of fire.
+      </p>
+
+      <h2>🔥 What the FWI Values Mean</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>FWI Value Range</th>
+            <th>Fire Danger Level</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>0 – 5</td>
+            <td>Low</td>
+            <td>Fires are unlikely or easy to control.</td>
+          </tr>
+          <tr>
+            <td>5 – 12</td>
+            <td>Moderate</td>
+            <td>Fires may start and spread slowly.</td>
+          </tr>
+          <tr>
+            <td>12 – 21</td>
+            <td>High</td>
+            <td>Fires likely to start and spread quickly.</td>
+          </tr>
+          <tr>
+            <td>21 – 30</td>
+            <td>Very High</td>
+            <td>Fires will start easily and spread rapidly.</td>
+          </tr>
+          <tr>
+            <td>30+</td>
+            <td>Extreme</td>
+            <td>Explosive fire behavior. Very difficult to control.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        When you input conditions like temperature, humidity, and wind speed
+        into the prediction form, the app will output an FWI value. You can then
+        refer to this table to understand the fire risk level.
+      </p>
+
+      <a href="{{ url_for('predict_datapoint') }}" class="btn"
+        >Start Prediction</a
+      >
+    </div>
+  </body>
+</html>
