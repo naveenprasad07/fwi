@@ -41,5 +41,3 @@ The **Forest Fire Weather Index (FWI)** is a numerical rating of fire intensity 
 
 ---
 
-## 📁 Project Structure
-
