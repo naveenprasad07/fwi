@@ -1,5 +1,7 @@
 # 🔥 Forest Fire Weather Index (FWI) Prediction App
 
+
+
 ## 🌲 Overview
 
 This project is a web-based application that predicts the **Forest Fire Weather Index (FWI)** — a key metric used to assess the likelihood and intensity of forest fires — based on environmental and weather-related data.
@@ -7,6 +9,10 @@ This project is a web-based application that predicts the **Forest Fire Weather 
 Built using **Python**, **Flask**, and **Scikit-Learn**, this app helps visualize fire danger levels for proactive risk management.
 
 ---
+
+## 🌐 Live Demo
+
+🔗 [Click here to try the app](https://fwi-hp90.onrender.com)
 
 ## 🚀 Features
 
